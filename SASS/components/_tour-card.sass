@@ -1,0 +1,120 @@
+.card-tour
+    height: 50rem
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    @media only screen and (max-width: 900px), (hover:none)
+        height: auto
+    &__side
+        height: 50rem
+        transition: all .7s ease-out
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        box-shadow: $box-shadow
+        border-radius: .5rem
+        overflow: hidden
+        @media only screen and (max-width: 900px), (hover:none)
+            height: auto
+            position: relative
+        &_front
+            @media only screen and (max-width: 900px), (hover:none)
+                padding-bottom: 10rem
+        &_back
+            background: linear-gradient(120deg, $color-brown-light, $color-brown-dark)
+            transform: rotateY(180deg)
+            @media only screen and (max-width: 900px), (hover:none)
+                transform: rotateY(0deg)
+                clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%)
+                margin-top: -8rem 
+    &:hover &__side_front
+        transform: rotateY(-180deg)
+        @media only screen and (max-width: 900px), (hover:none)
+            transform: rotateY(0deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
+    &__img
+        background-blend-mode: hard-light
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        height: 21rem
+        &_1
+            background: $color-brown-light url(../img/card-2.png) center / cover no-repeat
+        &_2
+            background: $color-brown-light url(../img/card-1.png) center / cover no-repeat
+        &_3
+            background: $color-brown-light url(../img/card-3.png) center / cover no-repeat
+        @media only screen and (max-width: 900px), (hover:none)
+            height: 30rem
+    &__title
+        font-size: 2.8rem
+        font-weight: 300
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: right
+        position: absolute
+        top: 17rem
+        right: 0rem
+        @media only screen and (max-width: 900px), (hover:none)
+            top: 25rem
+            font-size: 3rem
+    &__span
+        background: linear-gradient(90deg, $color-brown-light, $color-brown-dark)
+        padding: 1rem 2rem 0.3rem 4rem
+        &_1
+            @media only screen and (max-width: 900px), (hover:none)
+                padding: 1rem 2rem 0.3rem 2rem
+        &_2
+            padding: 0rem 2rem 1rem 2rem
+            position: absolute
+            top: 3.4rem
+            right: 0
+            @media only screen and (max-width: 900px), (hover:none)
+              top: 3rem
+
+    &__description
+        ul
+            list-style: none
+            margin: 0 auto
+            width: 75%
+            text-align: center
+            @media only screen and (max-width: 900px), (hover:none)
+                width: 56%
+            li
+                font-size: $font-size-paragraph
+                letter-spacing: .2rem
+                color: $color-gray
+                border-bottom: 1px solid $color-gray
+                display: inline-block
+                &:not(:last-child)
+                    margin-bottom: 2rem
+                @media only screen and (max-width: 900px), (hover:none)
+                    font-size: 1.5rem
+                @media only screen and (max-width: 900px), (hover:none)
+                    font-size: 2rem
+                
+    &__backSide-box
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        @media only screen and (max-width: 900px), (hover:none)
+            position: relative
+            top: 0%
+            left: 0%
+            transform: translate(0%, 0%)
+            padding: 12rem 5rem 5rem 5rem
+            text-align: center 
+    &__text
+        margin-bottom: 8rem
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: center
+        &_1
+            font-size: $font-size-paragraph
+            font-weight: 300
+        &_2
+            font-size: 6rem
+            font-weight: 500

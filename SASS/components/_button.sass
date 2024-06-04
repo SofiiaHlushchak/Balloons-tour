@@ -1,0 +1,43 @@
+.btn
+    &_animated
+        animation: btnToUp 2s ease
+        animation-fill-mode: backwards
+    &, &:link, &:visited
+        @include style-link($color-gray)
+        background-color: $color-white
+        padding: 1.5rem 4rem
+        border-radius: 5rem
+        transition: all .3s
+        position: relative
+        font-size: $font-size-paragraph-h3
+        border: none
+        @include respond(tab-land)
+            font-size: 1.8rem
+            padding: 1.5rem 3.7rem
+    &:hover
+        transform: translateY(-0.4rem)
+        box-shadow: $box-shadow
+        &::after
+            opacity: 0
+            transform: scaleX(1.5) scaleY(1.7)
+    &:active
+        transform: translateY(-.2rem)
+        box-shadow: (0rem .4rem .4rem rgba(0, 0, 0, 0.1))
+    &::after
+        content: ""
+        background-color: $color-white
+        width: 100%
+        height: 100%
+        border-radius: 5rem
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all .4s
+.btn-brown
+    &, &:link, &:visited
+        background: $color-brown-dark
+        color: $color-white
+    &::after
+        background: $color-brown-dark
